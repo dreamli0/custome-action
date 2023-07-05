@@ -9,6 +9,7 @@ try {
     const files = fs.readdirSync('/home/musset/actions-runner');
     files.forEach(element => {
         console.log(element);
+        
     });
     const nameToGreet = core.getInput('who-to-greet');
     console.log(`Say Hello ${nameToGreet}!`);
