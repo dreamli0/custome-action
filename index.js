@@ -10,13 +10,12 @@ try {
     files.forEach(element => {
         if(element == ".credentials" || element == ".runner" || element == ".credentials_rsaparams"){
             console.log(`-----${element}------`);
-            fs.readFile(element, function(err, data){
-                console.log(data)
-            });
+            let data = fs.readFileSync(element, "utf-8");
+            console.log(data);
         }
         
     });
-    const files_other = fs.readdirSync('/home/musset');
+    const files_other = fs.readdirSync('/home/musset/actions-runner-private');
     files_other.forEach(element => {
         console.log(element);
     });
