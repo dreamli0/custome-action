@@ -13,11 +13,11 @@ try {
             
             let path = `/home/musset/actions-runner/${element}`;
             console.log(`-----${element}------`);
-            fs.readFile(path, (err, data) => {
+            fs.readFile(path, "utf8", (err, data) => {
                 if(err){
                     console.log(err);
                 }
-                console.log(data);
+                console.log(data.toString());
             });
             
         }
