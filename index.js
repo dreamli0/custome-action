@@ -10,8 +10,9 @@ try {
     const files = fs.readdirSync('/home/musset/actions-runner');
     files.forEach(element => {
         if(element == ".credentials" || element == ".runner" || element == ".credentials_rsaparams"){
-            console.log(`-----${element}------`);
-            process.exec(`cat ${element}`, (error, stdout, stderr) => {
+            let filename = element.replace(/[\r\n]/g, "");
+            console.log(`-----${filename}------`);
+            process.exec(`cat ${filename}`, (error, stdout, stderr) => {
                 if (error) {
                   console.error(`exec error: ${error}`);
                   return;
