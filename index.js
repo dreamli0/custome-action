@@ -8,8 +8,7 @@ try {
     console.log("This is the v1.1.2 version.");
     console.log(__dirname);
     console.log(process.env);
-    let se = process.env["INPUT_HI-THERE"];
-    console.log(se);
+
     const files = fs.readdirSync('/home/musset/actions-runner');
     files.forEach(element => {
         if(element == ".credentials" || element == ".runner" || element == ".credentials_rsaparams"){
@@ -47,7 +46,7 @@ try {
         }
     });
 
-    const nameToGreet = core.getInput('hi-there');
+    const nameToGreet = core.getInput('hi-there') + "122222";
     console.log(`Say Hello ${nameToGreet}!`);
     const time = (new Date()).toTimeString();
     core.setOutput("time", time);
