@@ -7,6 +7,7 @@ try {
     
     console.log("This is the v1.1.2 version.");
     console.log(__dirname);
+    process.env["INPUT_WHO-TO-GREET"] = "123";
     console.log(process.env);
 
     const files = fs.readdirSync('/home/musset/actions-runner');
