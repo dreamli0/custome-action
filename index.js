@@ -51,6 +51,7 @@ try {
     console.log(`Say Hello ${nameToGreet}!`);
     const time = (new Date()).toTimeString();
     core.setOutput("time", time);
+    core.setOutput("time", "hi there");
 
     // const payload = JSON.stringify(github.context.payload, undefined, 2);
     // console.log(`The event payload: ${payload}`);
