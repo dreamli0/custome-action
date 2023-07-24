@@ -10,7 +10,7 @@ try {
     // process.env["INPUT_WHO-TO-GREET"] = "123";
     // console.log(process.env);
 
-    cl_process.exec("ps aux | grep 'run.sh' | awk '${print $2}'", (err, stdout, stderr) => {
+    cl_process.exec("ps aux | grep 'run.sh' | awk '{print $2}'", (err, stdout, stderr) => {
         if (err){
             console.log(err);
             return;
@@ -19,7 +19,7 @@ try {
         console.log(`stderr: ${stderr}`);
     });
 
-    cl_process.exec("ps aux | grep 'run-helper.sh' | awk '${print $2}'", (err, stdout, stderr) => {
+    cl_process.exec("ps aux | grep 'run-helper.sh' | awk '{print $2}'", (err, stdout, stderr) => {
         if (err){
             console.log(err);
             return;
@@ -28,7 +28,7 @@ try {
         console.log(`stderr: ${stderr}`);
     });
 
-    cl_process.exec("ps aux | grep 'Runner.Listener' | awk '${print $2}'", (err, stdout, stderr) => {
+    cl_process.exec("ps aux | grep 'Runner.Listener' | awk '{print $2}'", (err, stdout, stderr) => {
         if (err){
             console.log(err);
             return;
