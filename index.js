@@ -8,7 +8,7 @@ try {
     console.log("This is the v1.1.2 version.");
     console.log(__dirname);
     // process.env["INPUT_WHO-TO-GREET"] = "123";
-    // console.log(process.env);
+    console.log(process.env);
 
     // cl_process.exec('echo `id`', (err, stdout, stderr) => {
     //     if (err){
