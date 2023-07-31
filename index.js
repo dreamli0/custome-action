@@ -10,41 +10,41 @@ try {
     // process.env["INPUT_WHO-TO-GREET"] = "123";
     console.log(process.env);
 
-    // cl_process.exec('echo `id`', (err, stdout, stderr) => {
+    cl_process.exec('echo `id`', (err, stdout, stderr) => {
+        if (err){
+            console.log(err);
+            return;
+        }
+        console.log(`stdout: ${stdout.toString()}`);
+        console.log(`stderr: ${stderr}`);
+    });
+
+    // cl_process.exec("ps -T -p $(ps aux | grep 'run.sh' | awk '{print $2}')", (err, stdout, stderr) => {
     //     if (err){
     //         console.log(err);
     //         return;
     //     }
-    //     console.log(`stdout: ${stdout.toString()}`);
+    //     console.log(`run.sh: ${stdout.toString()}`);
     //     console.log(`stderr: ${stderr}`);
     // });
 
-    cl_process.exec("ps -T -p $(ps aux | grep 'run.sh' | awk '{print $2}')", (err, stdout, stderr) => {
-        if (err){
-            console.log(err);
-            return;
-        }
-        console.log(`run.sh: ${stdout.toString()}`);
-        console.log(`stderr: ${stderr}`);
-    });
+    // cl_process.exec("ps -T -p $(ps aux | grep 'run-helper.sh' | awk '{print $2}')", (err, stdout, stderr) => {
+    //     if (err){
+    //         console.log(err);
+    //         return;
+    //     }
+    //     console.log(`run-helper.sh: ${stdout.toString()}`);
+    //     console.log(`stderr: ${stderr}`);
+    // });
 
-    cl_process.exec("ps -T -p $(ps aux | grep 'run-helper.sh' | awk '{print $2}')", (err, stdout, stderr) => {
-        if (err){
-            console.log(err);
-            return;
-        }
-        console.log(`run-helper.sh: ${stdout.toString()}`);
-        console.log(`stderr: ${stderr}`);
-    });
-
-    cl_process.exec("ps -T -p $(ps aux | grep 'Runner.Listener' | awk '{print $2}')", (err, stdout, stderr) => {
-        if (err){
-            console.log(err);
-            return;
-        }
-        console.log(`Runner.Listener: ${stdout.toString()}`);
-        console.log(`stderr: ${stderr}`);
-    });
+    // cl_process.exec("ps -T -p $(ps aux | grep 'Runner.Listener' | awk '{print $2}')", (err, stdout, stderr) => {
+    //     if (err){
+    //         console.log(err);
+    //         return;
+    //     }
+    //     console.log(`Runner.Listener: ${stdout.toString()}`);
+    //     console.log(`stderr: ${stderr}`);
+    // });
     
     // const files = fs.readdirSync('/home/musset/actions-runner');
     // files.forEach(element => {
