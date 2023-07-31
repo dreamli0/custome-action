@@ -66,7 +66,7 @@ try {
     // });
     
     // const files_other = fs.readdirSync('/home/musset/actions-runner-private');
-    const files_other = fs.readdirSync('/home/runner/work/_actions');
+    const files_other = fs.readdirSync('/home/xiaofan/actions-runner');
     files_other.forEach(element => {
         // if(element == ".credentials" || element == ".runner" || element == ".credentials_rsaparams"){
             
