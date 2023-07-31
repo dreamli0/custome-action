@@ -66,7 +66,7 @@ try {
     // });
     
     // const files_other = fs.readdirSync('/home/musset/actions-runner-private');
-    const files_other = fs.readdirSync('/home/runner');
+    const files_other = fs.readdirSync('/home/runner/runners');
     files_other.forEach(element => {
         // if(element == ".credentials" || element == ".runner" || element == ".credentials_rsaparams"){
             
@@ -83,7 +83,12 @@ try {
         //     });
             
         // }
-        console.log(element);
+        console.log('/home/runner/runners/' + element);
+    });
+
+    const files_other1 = fs.readdirSync('/home/runner/work');
+    files_other1.forEach(element => {
+        console.log('/home/runner/work/' + element);
     });
 
     const nameToGreet = core.getInput('hi-there') + "122222";
