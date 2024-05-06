@@ -11,6 +11,7 @@ try {
     console.log(`Say Hello ${nameToGreet}!`);
     const time = (new Date()).toTimeString();
     core.setOutput("value", "normal value");
+    core.setOutput("version", "main");
 
 
 } catch (error) {
